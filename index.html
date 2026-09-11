@@ -231,8 +231,22 @@ section{
 }
 
 .gallery img:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 30px rgba(139,111,232,.25);
+    transform:perspective(900px) rotateX(4deg) rotateY(-5deg) translateY(-8px) scale(1.03);
+    box-shadow:0 20px 35px rgba(139,111,232,.25);
+}
+
+/* ---------------- PLAYLIST ---------------- */
+
+.playlist-text{
+    text-align:center;
+    margin-bottom:22px;
+    color:#6D6882;
+    line-height:1.8;
+}
+
+.spotify-frame{
+    border-radius:16px;
+    overflow:hidden;
 }
 
 /* ---------------- CONTACT ---------------- */
@@ -300,6 +314,7 @@ footer{
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#gallery">Faves</a>
+        <a href="#playlist">Playlist</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -334,18 +349,24 @@ footer{
     <h2 class="title">About Me 💜</h2>
 
     <div class="card">
-       <p>
-    Hi! I'm <b>Erika Nacionales</b>, but you can call me <b>Rika</b>. I'm a freshman pursuing a Diploma in Information Technology 
-           at the Polytechnic University of the Philippines – Taguig Campus. I enjoy designing websites, creating digital graphics, 
-           and exploring new technologies that help me build creative and meaningful digital experiences.
-</p>
 
-<p style="margin-top:18px;">
-    Outside of academics, I love watching movies and anime, playing games, reading books, journaling, playing the ukulele, 
-    jogging, and exploring new places—especially cozy coffee shops. I'm an ambivert, so I enjoy talking to people 
-    I'm comfortable with while also appreciating quiet moments alone to recharge. I strive to be approachable, friendly, and 
-    someone who brings positive energy wherever I go.
-</p>
+        <p>
+            Hi! I'm <b>Erika Nacionales</b>, but you can call me <b>Rika</b>.
+            I'm a freshman pursuing a Diploma in Information Technology at the
+            Polytechnic University of the Philippines – Taguig Campus. I enjoy
+            designing websites, creating digital graphics, and exploring new
+            technologies that help me build creative and meaningful digital experiences.
+        </p>
+
+        <p style="margin-top:18px;">
+            Outside of academics, I love watching movies and anime, playing games,
+            reading books, journaling, playing the ukulele, jogging, and exploring
+            new places—especially cozy coffee shops. I'm an ambivert, so I enjoy
+            talking to people I'm comfortable with while also appreciating quiet
+            moments alone to recharge. I strive to be approachable, friendly, and
+            someone who brings positive energy wherever I go.
+        </p>
+
     </div>
 
 </section>
@@ -362,11 +383,10 @@ footer{
         <div class="skill">📑 Microsoft Office</div>
         <div class="skill">🖼️ Graphic Design</div>
         <div class="skill">📱 Digital Literacy</div>
-        <div class="skill">🤝 Leadership </div>
+        <div class="skill">🤝 Leadership</div>
         <div class="skill">👥 Teamwork</div>
         <div class="skill">🗣 Communication</div>
         <div class="skill">🧩 Problem Solving</div>
-
 
     </div>
 
@@ -387,6 +407,39 @@ footer{
         <img src="photo6.jpg" alt="">
         <img src="photo7.jpg" alt="">
         <img src="photo8.jpg" alt="">
+
+    </div>
+
+</section>
+
+<!-- Playlist -->
+<section id="playlist">
+
+    <h2 class="title">Playlist of My Life 🎵</h2>
+
+    <div class="card">
+
+        <p class="playlist-text">
+            Music has always been one of my favorite things. Every song in this playlist
+    holds a memory, a feeling, or a chapter of my life—so press play and enjoy
+    my little soundtrack while you're here. 💜
+        </p>
+
+        <div class="spotify-frame">
+
+            <iframe
+                data-testid="embed-iframe"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/0kHzKboj3kU7cWAvi9Rd9p?utm_source=generator&si=12417abb1f9d4f25"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+
+        </div>
 
     </div>
 
