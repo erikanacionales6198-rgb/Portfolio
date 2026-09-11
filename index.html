@@ -235,57 +235,80 @@ section{
     box-shadow:0 20px 35px rgba(139,111,232,.25);
 }
 
-/* ---------------- PLAYLIST ---------------- */
+/* ---------------- PLAYLIST + QUOTE ---------------- */
 
-.playlist-text{
-    text-align:center;
-    margin-bottom:22px;
-    color:#6D6882;
-    line-height:1.8;
+.split-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:24px;
+    align-items:stretch;
 }
 
-.spotify-frame{
-    border-radius:16px;
-    overflow:hidden;
-}
-
-/* ---------------- FAVORITE QUOTE ---------------- */
-
-.quote-card{
+.glass-card{
     background:rgba(255,255,255,.45);
     backdrop-filter:blur(18px);
     border:1px solid rgba(255,255,255,.35);
     border-radius:30px;
-    padding:45px 35px;
-    text-align:center;
+    padding:28px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
+.split-title{
+    color:#715BD4;
+    font-size:28px;
+    margin-bottom:14px;
+    text-align:center;
+}
+
+.split-text{
+    color:#6D6882;
+    text-align:center;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.quote-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
 .quote-mark{
-    font-size:72px;
-    color:#C7B6FF;
+    font-size:78px;
+    color:#CDBEFF;
     line-height:.8;
+    margin-bottom:10px;
 }
 
 .quote-card blockquote{
     font-size:28px;
+    font-style:italic;
     font-weight:500;
     color:#5C46B4;
     line-height:1.5;
-    font-style:italic;
-    margin:10px 0 20px;
+    margin-bottom:18px;
 }
 
 .quote-author{
     color:#8A84A2;
-    font-size:15px;
     letter-spacing:1px;
+    font-size:15px;
 }
 
-@media(max-width:768px){
-    .quote-card blockquote{
-        font-size:22px;
+/* Mobile */
+
+@media(max-width:900px){
+
+    .split-grid{
+        grid-template-columns:1fr;
     }
+
+    .quote-card blockquote{
+        font-size:24px;
+    }
+
 }
     
 /* ---------------- CONTACT ---------------- */
@@ -454,20 +477,19 @@ footer{
 
 </section>
 
-<!-- Playlist -->
-<section id="playlist">
+<!-- Playlist + Quote -->
+<section id="playlist-quote">
 
-    <h2 class="title">Playlist of My Life 🎵</h2>
+    <div class="split-grid">
 
-    <div class="card">
+        <!-- Playlist -->
+        <div class="glass-card">
 
-        <p class="playlist-text">
-            Music has always been one of my favorite things. Every song in this playlist
-    holds a memory, a feeling, or a chapter of my life—so press play and enjoy
-    my little soundtrack while you're here. 💜
-        </p>
+            <h2 class="split-title">Playlist of My Life 🎵</h2>
 
-        <div class="spotify-frame">
+            <p class="split-text">
+                Music has always been one of my favorite things. Every song in this playlist holds a memory, a feeling, or a chapter of my life—so press play and enjoy my little soundtrack while you're here. 💜
+            </p>
 
             <iframe
                 data-testid="embed-iframe"
@@ -483,24 +505,21 @@ footer{
 
         </div>
 
-    </div>
+        <!-- Quote -->
+        <div class="glass-card quote-card">
 
-</section>
+            <h2 class="split-title">Words I Live By ✨</h2>
 
-<!-- Favorite Quote -->
-<section id="quote">
+            <div class="quote-mark">“</div>
 
-    <h2 class="title">Words I Live By ✨</h2>
+            <blockquote>
+                If you can dream it,<br>
+                you can do it.
+            </blockquote>
 
-    <div class="quote-card">
+            <p class="quote-author">— Walt Disney</p>
 
-        <div class="quote-mark">“</div>
-
-        <blockquote>
-            If you can dream it, you can do it.
-        </blockquote>
-
-        <p class="quote-author">— Walt Disney</p>
+        </div>
 
     </div>
 
