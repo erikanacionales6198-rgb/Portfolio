@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erika Nacionales ✿ Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -20,12 +20,32 @@ html{
 }
 
 body{
-    background:linear-gradient(180deg,#F8F5FF,#FFF9FD);
-    color:#5b5470;
+    color:#5B5470;
     overflow-x:hidden;
+    position:relative;
 }
 
-/* Floating circles */
+/* ---------------- BACKGROUND VIDEO ---------------- */
+
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-3;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(248,245,255,.55);
+    backdrop-filter:blur(2px);
+    z-index:-2;
+}
+
+/* Floating Glow */
 
 body::before,
 body::after{
@@ -34,45 +54,47 @@ body::after{
     width:300px;
     height:300px;
     border-radius:50%;
-    background:rgba(189,168,255,.18);
-    filter:blur(60px);
+    filter:blur(70px);
     z-index:-1;
 }
 
 body::before{
+    background:rgba(185,161,255,.30);
     top:-80px;
     left:-80px;
 }
 
 body::after{
+    background:rgba(255,198,236,.28);
     bottom:-100px;
     right:-80px;
 }
 
-/* Navbar */
+/* ---------------- NAVBAR ---------------- */
 
 nav{
     position:sticky;
     top:0;
-    backdrop-filter:blur(12px);
-    background:rgba(255,255,255,.65);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:18px 10%;
-    z-index:99;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.25);
+    z-index:100;
 }
 
 .logo{
+    font-size:24px;
     font-weight:700;
-    color:#8B6FE8;
-    font-size:22px;
+    color:#7A5BEF;
 }
 
 nav a{
     text-decoration:none;
     color:#666;
-    margin-left:20px;
+    margin-left:22px;
     transition:.3s;
 }
 
@@ -80,234 +102,309 @@ nav a:hover{
     color:#8B6FE8;
 }
 
-/* Hero */
+/* ---------------- HERO ---------------- */
 
 .hero{
-    min-height:90vh;
+    min-height:92vh;
     display:flex;
-    flex-wrap:wrap;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
     padding:60px 10%;
-    gap:50px;
 }
 
 .profile{
-    width:280px;
-    height:280px;
-    border-radius:35px;
+    width:290px;
+    height:290px;
     object-fit:cover;
-    border:8px solid white;
-    box-shadow:0 15px 35px rgba(139,111,232,.25);
+    border-radius:35px;
+    border:8px solid rgba(255,255,255,.7);
+    box-shadow:0 20px 40px rgba(120,90,220,.25);
 }
 
 .hero-text{
-    max-width:500px;
+    max-width:520px;
 }
 
 .tag{
     display:inline-block;
-    background:#EFE7FF;
-    color:#8B6FE8;
+    background:#F0E8FF;
+    color:#7A5BEF;
     padding:8px 16px;
     border-radius:999px;
     font-size:14px;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:48px;
-    color:#5847A7;
+    font-size:52px;
+    color:#5C46B4;
     line-height:1.1;
 }
 
 .hero p{
-    margin:20px 0;
-    color:#6d6882;
+    margin:22px 0;
+    line-height:1.8;
+    color:#6D6882;
 }
 
 .button{
     display:inline-block;
-    background:#8B6FE8;
-    color:white;
-    padding:14px 28px;
-    border-radius:30px;
     text-decoration:none;
-    transition:.3s;
+    color:white;
+    background:linear-gradient(135deg,#8B6FE8,#B194FF);
+    padding:14px 28px;
+    border-radius:999px;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(139,111,232,.35);
 }
 
 .button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(139,111,232,.3);
+    transform:translateY(-4px);
 }
 
-/* Sections */
+/* ---------------- SECTIONS ---------------- */
 
 section{
-    padding:70px 10%;
+    padding:80px 10%;
 }
 
 .title{
     text-align:center;
-    font-size:32px;
     color:#715BD4;
+    font-size:34px;
     margin-bottom:35px;
 }
 
 .card{
-    background:white;
-    border-radius:28px;
-    padding:30px;
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    background:rgba(255,255,255,.45);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* Skills */
+.card p{
+    line-height:1.9;
+}
+
+/* ---------------- SKILLS ---------------- */
 
 .skills{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
-    gap:14px;
+    flex-wrap:wrap;
+    gap:16px;
 }
 
 .skill{
-    background:#F1EBFF;
-    color:#715BD4;
-    padding:12px 20px;
+    padding:12px 22px;
     border-radius:999px;
+    background:rgba(241,235,255,.8);
+    color:#715BD4;
     transition:.3s;
+    font-weight:500;
 }
 
 .skill:hover{
-    transform:scale(1.05);
+    transform:translateY(-4px) scale(1.05);
+    background:#E7DDFF;
 }
 
-/* Gallery */
+/* ---------------- GALLERY ---------------- */
 
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:18px;
+    gap:20px;
 }
 
 .gallery img{
     width:100%;
-    height:220px;
+    height:230px;
     object-fit:cover;
     border-radius:22px;
-    transition:.3s;
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    transition:.35s;
+    box-shadow:0 10px 22px rgba(0,0,0,.10);
 }
 
 .gallery img:hover{
-    transform:translateY(-7px) rotate(-1deg);
+    transform:translateY(-8px);
+    box-shadow:0 18px 30px rgba(139,111,232,.25);
 }
 
-/* Contact */
+/* ---------------- CONTACT ---------------- */
 
 .contact p{
-    margin:10px 0;
+    margin:14px 0;
 }
 
-/* Footer */
+/* ---------------- FOOTER ---------------- */
 
 footer{
     text-align:center;
     padding:35px;
-    color:#8c88a0;
+    color:#8A84A2;
+    background:rgba(255,255,255,.20);
+    backdrop-filter:blur(10px);
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:768px){
+
+    nav{
+        padding:15px 6%;
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0 10px;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .profile{
+        width:240px;
+        height:240px;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- Background Video -->
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- Navigation -->
 <nav>
+
     <div class="logo">Rika ✿</div>
+
     <div>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#gallery">Faves</a>
         <a href="#contact">Contact</a>
     </div>
+
 </nav>
 
+<!-- Hero -->
 <section class="hero">
 
-    <img src="profile.jpg" class="profile">
+    <img src="profile.jpg" class="profile" alt="Erika">
 
     <div class="hero-text">
-        <div class="tag">🎀 DIT 1-1 </div>
+
+        <div class="tag">🎀 DIT 1-1 • Vice President</div>
 
         <h1>Hello,<br>I'm Erika!</h1>
 
         <p>
-            DIT 1-1 Vice President and Student who loves technology, design, and creating
-            meaningful digital projects. Welcome to my little corner of the internet!
+            An Iskolar ng Bayan pursuing Diploma in Information Technology at
+            PUP Taguig. I love web design, graphic design, and creating digital
+            projects that are both beautiful and meaningful.
         </p>
 
         <a href="#about" class="button">More About Me</a>
+
     </div>
 
 </section>
 
+<!-- About -->
 <section id="about">
 
     <h2 class="title">About Me 💜</h2>
 
     <div class="card">
         <p>
-           Hi! I'm Erika Nacionales, you can call me Rika for short. I am an Iskolar ng Bayan pursuing Diploma in Information Technology at Polytechnic University 
-            of the Philippines – Taguig Campus. I enjoy web design, graphic designing, and exploring new digital technologies, 
-            and I'm passionate about creating projects that are both functional and visually appealing.
+            Hi! I'm <b>Erika Nacionales</b>, but you can call me <b>Rika</b>.
+            I'm currently a freshman taking Diploma in Information Technology
+            at the Polytechnic University of the Philippines – Taguig Campus.
+            I enjoy designing websites, creating digital graphics, and learning
+            new technologies that help me build creative and functional experiences.
+            Outside of academics, I love watching movies and anime, playing games, reading books, journaling, playing the ukulele, 
+            jogging, and exploring new places—especially cozy coffee shops. I'm an ambivert, so I enjoy meeting and talking to 
+            people I'm comfortable with, but I also value spending time alone to recharge. I strive to be approachable, friendly, 
+            and someone who brings positive energy wherever I go.
         </p>
     </div>
 
 </section>
 
+<!-- Skills -->
 <section id="skills">
 
     <h2 class="title">My Skills ✨</h2>
 
     <div class="skills">
+
         <div class="skill">💻 HTML</div>
         <div class="skill">🎨 CSS</div>
+        <div class="skill">🖥 Java</div>
         <div class="skill">📑 Microsoft Office</div>
-        <div class="skill">🖼️ Graphic Designing </div>
+        <div class="skill">🖼 Graphic Design</div>
         <div class="skill">📱 Digital Literacy</div>
-        <div class="skill">🤝 Teamwork</div>
+        <div class="skill">👥 Teamwork</div>
         <div class="skill">🗣 Communication</div>
         <div class="skill">🧩 Problem Solving</div>
+         <div class="skill">🤝 Leadership </div>
+
+
     </div>
 
 </section>
 
+<!-- Gallery -->
 <section id="gallery">
 
     <h2 class="title">My Faves 📸</h2>
 
     <div class="gallery">
-        <img src="photo1.jpg">
-        <img src="photo2.jpg">
-        <img src="photo3.jpg">
-        <img src="photo4.jpg">
-        <img src="photo5.jpg">
-        <img src="photo6.jpg">
-        <img src="photo7.jpg">
-        <img src="photo8.jpg">
-        
+
+        <img src="photo1.jpg" alt="">
+        <img src="photo2.jpg" alt="">
+        <img src="photo3.jpg" alt="">
+        <img src="photo4.jpg" alt="">
+        <img src="photo5.jpg" alt="">
+        <img src="photo6.jpg" alt="">
+        <img src="photo7.jpg" alt="">
+        <img src="photo8.jpg" alt="">
+
     </div>
 
 </section>
-    
+
+<!-- Contact -->
 <section id="contact">
 
     <h2 class="title">Let's Connect 🌷</h2>
 
     <div class="card contact">
-        <p>📍Polytechnic University of the Philippines Taguig Campus </p>
-        <p>🎓 Freshman DIT 1-1 </p>
-        <p>✉ erikanacionales6198@gmail.com</p>
-        <p>💜 Thank you for visiting my portfolio!</p>
+
+        <p>📍 Polytechnic University of the Philippines – Taguig Campus</p>
+        <p>🎓 Freshman • Diploma in Information Technology</p>
+        <p>💜 DIT 1-1 Vice President</p>
+        <p>✉️ erikanacionales6198@gmail.com</p>
+        <p>🌸 Thank you for visiting my little corner of the internet!</p>
+
     </div>
 
 </section>
