@@ -249,6 +249,45 @@ section{
     overflow:hidden;
 }
 
+/* ---------------- FAVORITE QUOTE ---------------- */
+
+.quote-card{
+    background:rgba(255,255,255,.45);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    padding:45px 35px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.quote-mark{
+    font-size:72px;
+    color:#C7B6FF;
+    line-height:.8;
+}
+
+.quote-card blockquote{
+    font-size:28px;
+    font-weight:500;
+    color:#5C46B4;
+    line-height:1.5;
+    font-style:italic;
+    margin:10px 0 20px;
+}
+
+.quote-author{
+    color:#8A84A2;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+@media(max-width:768px){
+    .quote-card blockquote{
+        font-size:22px;
+    }
+}
+    
 /* ---------------- CONTACT ---------------- */
 
 .contact p{
@@ -311,12 +350,13 @@ footer{
     <div class="logo">Rika ✿</div>
 
     <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#gallery">Faves</a>
-        <a href="#playlist">Playlist</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#gallery">Faves</a>
+    <a href="#playlist">Playlist</a>
+    <a href="#quote">Quote</a>
+    <a href="#contact">Contact</a>
+</div>
 
 </nav>
 
@@ -356,6 +396,8 @@ footer{
             Polytechnic University of the Philippines – Taguig Campus. I enjoy
             designing websites, creating digital graphics, and exploring new
             technologies that help me build creative and meaningful digital experiences.
+            After completing my three-year diploma, I hope to be one of the students who 
+            qualifies for the ladderized Bachelor's Degree program and continue my academic journey.
         </p>
 
         <p style="margin-top:18px;">
@@ -445,6 +487,25 @@ footer{
 
 </section>
 
+<!-- Favorite Quote -->
+<section id="quote">
+
+    <h2 class="title">Words I Live By ✨</h2>
+
+    <div class="quote-card">
+
+        <div class="quote-mark">“</div>
+
+        <blockquote>
+            If you can dream it, you can do it.
+        </blockquote>
+
+        <p class="quote-author">— Walt Disney</p>
+
+    </div>
+
+</section>
+    
 <!-- Contact -->
 <section id="contact">
 
